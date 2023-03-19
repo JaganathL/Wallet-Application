@@ -1,0 +1,12 @@
+<h1>Add Funds</h1>
+<div class="card p-5">
+<h6>From Wallet Id :</h6>
+<input type="text" [(ngModel)]="fromid" name="Gid" placeholder="Enter Your Wallet ID" class="form-control"><br>
+<h6>To Wallet Id :</h6>
+<input type="text" [(ngModel)]="toid" class="form-control" placeholder="Enter the Transfer Wallet ID"><br>
+
+<label>Amount:</label>
+<input type="text" [(ngModel)]="amount" class="form-control" placeholder="Enter Your Amount" ><br>
+<input type="submit" (click)="transferfunds()" class="btn btn-outline-primary">
+</div>
+

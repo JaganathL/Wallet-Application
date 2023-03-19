@@ -1,0 +1,21 @@
+
+<div class="container">
+  <h2>Add wallet</h2>
+<div>
+  <div class="card box p-5">
+  <form action="/action_page.php">
+    <div class="form-group ">
+  <label>ID :</label>
+  <input class="form-control" type="text" [(ngModel)]="wallet.id"[ngModelOptions]="{standalone: true}" placeholder="Enter Your ID"></div>
+  <div class="form-group">
+  <label>Name :</label>
+  <input class="form-control"  type="text" [(ngModel)]="wallet.name" [ngModelOptions]="{standalone: true}" placeholder="Enter Your Name "></div>
+  <div class="form-group">
+  <label>Balance :</label>
+  <input class="form-control" type="text" [(ngModel)]="wallet.balance" [ngModelOptions]="{standalone: true}" placeholder="Enter Your Balance"></div>
+  <div class="form-group">
+  <input class="form-control btn-outline-primary" type="submit" (click)="onSubmit()"></div>
+</form>
+</div>
+</div>
+</div>

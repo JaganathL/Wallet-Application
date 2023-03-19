@@ -1,0 +1,22 @@
+<div class="container">
+    <H1>All employee details:</H1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let emp of wallets" >
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.balance}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

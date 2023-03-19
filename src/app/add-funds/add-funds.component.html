@@ -1,0 +1,11 @@
+<h1>Add Funds</h1>
+<div class="card p-5">
+<h6>Id :</h6>
+<input type="text" [(ngModel)]="walletid" name="Gid" class="form-control" placeholder="Enter Your ID"><br>
+<input type="submit" (click)="onSubmit()" class="btn btn-outline-primary"><br>
+<div *ngIf="wallet.id!=null">
+<label>Amount:</label>
+<input type="text" [(ngModel)]="amount" class="form-control" placeholder="Enter Your Amount For Deposit"><br>
+<input type="submit" (click)="addfunds()" class="btn btn-outline-primary">
+</div>
+</div>

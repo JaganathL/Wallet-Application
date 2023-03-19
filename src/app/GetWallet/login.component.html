@@ -1,0 +1,24 @@
+<h1>GET BY ID</h1>
+<div class="card p-5">
+<h6>Id :</h6>
+<input type="text" [(ngModel)]="walletid" name="Gid" class="form-control" placeholder="Enter Your ID" ><br>
+<input type="submit" (click)="onSubmit()" class="btn btn-outline-primary"><br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr >
+            <td>{{wallets.id}}</td>
+            <td>{{wallets.name}}</td>
+            <td>{{wallets.balance}}</td>
+        </tr>
+    </tbody>
+
+</table>
+</div>
