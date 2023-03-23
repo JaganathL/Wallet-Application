@@ -11,6 +11,8 @@ export class AddFundsComponent {
   walletid=null;
   amount=0;
   wallet:Wallet=new Wallet();
+  msg: string = "";
+  errorMsg: string = "";
   constructor(private backendservice: BackendserviceService){}
   onSubmit(){
     this.backendservice.getWalletById(this.walletid).subscribe({
@@ -25,8 +27,13 @@ export class AddFundsComponent {
     this.backendservice.addfunds(this.wallet,this.amount).subscribe({
       next:(data)=>{
         this.wallet=data;
+        this.msg= "Wallet updated successfully";
+        this.errorMsg= "";
       },
-      error:()=>{},
+      error:(err)=>{
+        this.msg= "";
+        this.errorMsg= JSON.stringify(err.error);
+      },
       complete:()=>{}
     })
   }

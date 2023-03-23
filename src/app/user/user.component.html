@@ -1,0 +1,63 @@
+<div class="container" *ngIf="t==false">
+  
+  <ul class="nav nav-pills nav-justified">
+<li class="nav-item">
+  <a class="nav-link active" routerLink="home" >Registration</a>
+</li>
+</ul>
+<br>
+<!-- <div class="container" *ngIf="t==false> -->
+  <h2>Login</h2>
+  <div class="card box p-5">
+  <form action="/action_page.php">
+    <div class="form-group ">
+  <label>ID :</label>
+  <input class="form-control" type="text" [(ngModel)]="id"[ngModelOptions]="{standalone: true}" placeholder="Enter Your ID">
+</div>
+  <div class="form-group">
+  <label>Password :</label>
+  <input class="form-control"  type="text" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}" #nameRef="ngModel" name="ename" id="ename"
+  pattern="[A-Za-z ]{3,}" title="Only chars are allowed,Min 3 char required" required placeholder="Enter Your Name ">
+</div>
+  <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+    <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
+    <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
+      allowed.</p>
+  </div>
+  <div class="form-group">
+    <input class="form-control btn-outline-primary" type="submit" (click)="onLogin()">
+  </div>
+  </form>
+  </div><!-- <H1>LOGIN</H1>
+  <label>id</label>
+<input type="text" [(ngModel)]="id"><br>
+<label>pass</label>
+<input type="text" [(ngModel)]="pass"><br>
+<input type="submit" (click)="onLogin()"> -->
+
+
+
+
+<router-outlet></router-outlet>
+</div>
+
+<div class="container" *ngIf="t==true">
+
+    <ul class="nav nav-pills nav-justified">
+        
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="addfunds">Deposit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="withdraw">Withdraw</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="transferfunds">TransferFunds</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="" >LogOut</a>
+          </li>
+        </ul><br>
+      
+       <router-outlet></router-outlet>
+      </div>

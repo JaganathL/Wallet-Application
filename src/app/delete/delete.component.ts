@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { BackendserviceService } from '../backendservice.service';
 
 @Component({
@@ -8,12 +9,20 @@ import { BackendserviceService } from '../backendservice.service';
 })
 export class DeleteComponent {
     walletid=null;
+    msg: string = "";
+    errorMsg: string = "";
     constructor(private backendservice: BackendserviceService){}
     onSubmit(){
       this.backendservice.deleteById(this.walletid).subscribe(
         {
-          next:(data)=>{},
-          error:()=>{},
+          next:(data)=>{
+            this.msg= "Wallet deleted successfully";
+          this.errorMsg= "";
+          },
+          error:(err)=>{
+            this.msg= "";
+          this.errorMsg= JSON.stringify(err.error);
+          },
           complete:()=>{}
         }
       )

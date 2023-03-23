@@ -41,5 +41,8 @@ export class BackendserviceService {
     let url:string = "http://localhost:8090/wallet/"+fid+"/"+tid+"/"+amount;
     return this.httpClient.put(url,wallet);
    }
+   login(id:number,pass:string):Observable<any>{
+    return this.httpClient.get("http://localhost:8090/wallet/login/"+id+"/"+pass);
+   }
 
 }

@@ -17,6 +17,9 @@ export class AppComponent {
     console.log("displayUserForm()");
     console.log(this.employee);
   }*/
- 
+ t:boolean=true;
+ onSubmit(){
+  this.t=false;
+ }
 
 }

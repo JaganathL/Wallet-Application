@@ -9,3 +9,9 @@
 <input type="submit" (click)="withdraw()" class="btn btn-outline-primary">
 </div>
 </div>
+<div *ngIf="msg" class="alert alert-success" >
+    <p class="">{{msg}}</p>
+  </div>
+  <div *ngIf="errorMsg" class="alert alert-danger">
+    <p>{{errorMsg}}</p> 
+  </div>

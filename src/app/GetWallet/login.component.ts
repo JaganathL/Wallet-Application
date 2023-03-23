@@ -10,6 +10,8 @@ import { Wallet } from '../model/wallet.model';
 export class LoginComponent implements OnInit {
   wallets:Wallet=new Wallet();
   walletid=null;
+  msg: string = "";
+  errorMsg: string = "";
   constructor(private backendservice: BackendserviceService){}
   ngOnInit(): void {
     
@@ -18,8 +20,13 @@ export class LoginComponent implements OnInit {
     this.backendservice.getWalletById(this.walletid).subscribe({
       next:(data)=>{
         this.wallets=data;
+        this.msg= "Wallet updated successfully";
+        this.errorMsg= "";
       },
-      error:()=>{},
+      error:(err)=>{
+        this.msg= "";
+        this.errorMsg= JSON.stringify(err.error);
+      },
       complete:()=>{}
     })
 

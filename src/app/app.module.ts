@@ -14,6 +14,9 @@ import { UpdateComponent } from './update/update.component';
 import { AddFundsComponent } from './add-funds/add-funds.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { TransferfundsComponent } from './transferfunds/transferfunds.component';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,14 +29,18 @@ import { TransferfundsComponent } from './transferfunds/transferfunds.component'
     UpdateComponent,
     AddFundsComponent,
     WithdrawComponent,
-    TransferfundsComponent
+    TransferfundsComponent,
+    AdminComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
+ 
   providers: [],
   bootstrap: [AppComponent]
 })

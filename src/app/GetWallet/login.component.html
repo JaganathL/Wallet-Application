@@ -22,3 +22,9 @@
 
 </table>
 </div>
+<div *ngIf="msg" class="alert alert-success" >
+    <p class="">{{msg}}</p>
+  </div>
+  <div *ngIf="errorMsg" class="alert alert-danger">
+    <p>{{errorMsg}}</p> 
+  </div>
